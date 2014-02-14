@@ -1,0 +1,9 @@
+[22-Jul-2013 07:32:26] PHP Fatal error:  Call to undefined function  get_header() in /home4/ygolecha/public_html/dealspitara/wp-content/themes/dealspitara/index.php on line 1
+[25-Jul-2013 21:08:13] PHP Fatal error:  Call to undefined function  get_header() in /home4/ygolecha/public_html/dealspitara/wp-content/themes/dealspitara/index.php on line 1
+[28-Jul-2013 07:49:44] PHP Fatal error:  Call to undefined function  get_header() in /home4/ygolecha/public_html/dealspitara/wp-content/themes/dealspitara/index.php on line 1
+[02-Oct-2013 08:54:09] PHP Fatal error:  Call to undefined function  get_header() in /home4/ygolecha/public_html/dealspitara/wp-content/themes/dealspitara/index.php on line 1
+[09-Oct-2013 17:47:10] PHP Fatal error:  Call to undefined function  get_header() in /home4/ygolecha/public_html/dealspitara/wp-content/themes/dealspitara/index.php on line 1
+[09-Oct-2013 17:49:37] PHP Fatal error:  Call to undefined function  language_attributes() in /home4/ygolecha/public_html/dealspitara/wp-content/themes/dealspitara/header.php on line 3
+[25-Oct-2013 00:40:36] PHP Fatal error:  Call to undefined function  get_header() in /home4/ygolecha/public_html/dealspitara/wp-content/themes/dealspitara/index.php on line 1
+[25-Oct-2013 00:40:40] PHP Fatal error:  Call to undefined function  get_header() in /home4/ygolecha/public_html/dealspitara/wp-content/themes/dealspitara/index.php on line 1
+[20-Dec-2013 05:34:22] PHP Fatal error:  Call to undefined function  get_header() in /home4/ygolecha/public_html/dealspitara/wp-content/themes/dealspitara/index.php on line 1

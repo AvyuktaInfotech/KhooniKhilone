@@ -1,0 +1,10 @@
+#Begin Attracta SEO Tools Sitemap. Do not remove
+sitemap: http://cdn.attracta.com/sitemap/2892574.xml.gz
+#End Attracta SEO Tools Sitemap. Do not remove
+
+Sitemap: https://online.webceo.com/submission/smaps/be7b71ce.xml.gz
+
+Sitemap: http://dealspitara.com/sitemap_index.xml
+
+User-agent: BLEXBot
+Disallow: /

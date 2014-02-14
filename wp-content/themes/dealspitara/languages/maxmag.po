@@ -1,0 +1,179 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Max Mag\n"
+"POT-Creation-Date: 2013-05-14 17:16-0500\n"
+"PO-Revision-Date: 2013-05-14 17:16-0500\n"
+"Last-Translator: \n"
+"Language-Team:  <mvpthemes@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;_n\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:6
+msgid "Error"
+msgstr ""
+
+#: 404.php:7
+msgid "The page you requested does not exist or has moved."
+msgstr ""
+
+#: archive.php:7
+msgid "All posts tagged"
+msgstr ""
+
+#: archive.php:8
+msgid "All posts by"
+msgstr ""
+
+#: archive.php:22 archive.php:33 category.php:47 category.php:58
+#: page-latest.php:32 page-latest.php:43 search.php:22
+#: widgets/widget-blog.php:69
+msgid "Posted"
+msgstr ""
+
+#: archives.php:15
+msgid "Archives by Month"
+msgstr ""
+
+#: archives.php:20
+msgid "Archives by Category"
+msgstr ""
+
+#: comments.php:3
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+
+#: comments.php:18
+msgid "One Comment"
+msgstr ""
+
+#: comments.php:50
+msgid "You must be logged in to post a comment"
+msgstr ""
+
+#: comments.php:52
+msgid "Login"
+msgstr ""
+
+#: functions.php:442
+msgid ""
+"Add a custom featured headline that will be displayed in the featured slider."
+msgstr ""
+
+#: functions.php:538
+msgid "at"
+msgstr ""
+
+#: functions.php:547
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:565
+msgid "Pingback:"
+msgstr ""
+
+#: functions.php:616
+msgid "Related Posts"
+msgstr ""
+
+#: header.php:102
+msgid "Don't Miss"
+msgstr ""
+
+#: search.php:8
+msgid "Search results for"
+msgstr ""
+
+#: searchform.php:2
+msgid "Search site"
+msgstr ""
+
+#: single.php:12
+msgid "By"
+msgstr ""
+
+#: single.php:12
+msgid "on"
+msgstr ""
+
+#: single.php:70
+msgid "About"
+msgstr ""
+
+#: theia-post-slider/admin-menu.php:28
+msgid "General Settings"
+msgstr ""
+
+#: theia-post-slider/admin-menu.php:32
+msgid "Theme:"
+msgstr ""
+
+#: theia-post-slider/admin-menu.php:47
+msgid "Transition effect:"
+msgstr ""
+
+#: theia-post-slider/admin-menu.php:62
+msgid "Transition duration (ms):"
+msgstr ""
+
+#: theia-post-slider/admin-menu.php:70
+msgid "Navigation Bar Settings"
+msgstr ""
+
+#: theia-post-slider/admin-menu.php:74
+msgid "Navigation text:"
+msgstr ""
+
+#: theia-post-slider/admin-menu.php:83
+msgid "Previous button text:"
+msgstr ""
+
+#: theia-post-slider/admin-menu.php:91
+msgid "Next button text:"
+msgstr ""
+
+#: theia-post-slider/admin-menu.php:99
+msgid "Button width (px):"
+msgstr ""
+
+#: theia-post-slider/admin-menu.php:108
+msgid "Horizontal position:"
+msgstr ""
+
+#: theia-post-slider/admin-menu.php:123
+msgid "Vertical position:"
+msgstr ""
+
+#: theia-post-slider/admin-menu.php:138
+msgid "Button behavior:"
+msgstr ""
+
+#: theia-post-slider/admin-menu.php:159
+msgid "Save All Changes"
+msgstr ""
+
+#: theia-post-slider/admin-menu.php:163
+msgid "Live Preview"
+msgstr ""
+
+#: theia-post-slider/admin-menu.php:240
+msgid "Credits"
+msgstr ""
+
+#: widgets/widget-tabs.php:52
+msgid "Popular"
+msgstr ""
+
+#: widgets/widget-tabs.php:53
+msgid "Comments"
+msgstr ""
+
+#: widgets/widget-tabs.php:150
+msgid "says"
+msgstr ""

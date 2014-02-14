@@ -1,0 +1,119 @@
+<?php
+/**
+ * Plugin Name: Homepage Blog Widget
+ */
+
+add_action( 'widgets_init', 'maxmag_blog_load_widgets' );
+
+function maxmag_blog_load_widgets() {
+	register_widget( 'maxmag_blog_widget' );
+}
+
+class maxmag_blog_widget extends WP_Widget {
+
+	/**
+	 * Widget setup.
+	 */
+	function maxmag_blog_widget() {
+		/* Widget settings. */
+		$widget_ops = array( 'classname' => 'maxmag_blog_widget', 'description' => __('A widget that displays your latest posts on the homepage in a blog layout.', 'maxmag_blog_widget') );
+
+		/* Widget control settings. */
+		$control_ops = array( 'width' => 250, 'height' => 350, 'id_base' => 'maxmag_blog_widget' );
+
+		/* Create the widget. */
+		$this->WP_Widget( 'maxmag_blog_widget', __('Max Mag: Homepage Blog Widget', 'maxmag_blog_widget'), $widget_ops, $control_ops );
+	}
+
+	/**
+	 * How to display the widget on the screen.
+	 */
+	function widget( $args, $instance ) {
+		extract( $args );
+
+		/* Our variables from the widget settings. */
+		$title = apply_filters('widget_title', $instance['title'] );
+
+		/* Before widget (defined by themes). */
+		echo $before_widget;
+
+		/* Display the widget title if one was input (before and after defined by themes). */
+		if ( $title )
+			echo $before_title . $title . $after_title;
+		?>
+
+
+			<ul class="category3">
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+				<li>
+					<?php if (  (function_exists('has_post_thumbnail')) && (has_post_thumbnail())  ) { ?>
+					<div class="blog-image">
+						<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_post_thumbnail('medium-thumb'); ?></a>
+					</div><!--blog-image-->
+					<div class="blog-text">
+						<a href="<?php the_permalink() ?>" class="main-headline"><?php the_title(); ?></a>
+						<p><?php echo excerpt(30); ?></p>
+						<div class="headlines-info">
+							<ul class="headlines-info">
+								<li><?php the_time('F j, Y'); ?></li>
+								<li class="comments-icon"><a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '%' ); ?></a></li>
+							</ul>
+						</div><!--headlines-info-->
+					</div><!--blog-text-->
+					<?php } else { ?>
+					<div class="blog-text-noimg">
+						<a href="<?php the_permalink() ?>" class="main-headline"><?php the_title(); ?></a>
+						<p><?php echo excerpt(30); ?></p>
+						<div class="headlines-info">
+							<ul class="headlines-info">
+								<li><?php _e( 'Posted', 'mvp-text' ); ?> <?php the_time('F j, Y'); ?></li>
+								<li class="comments-icon"><a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '%' ); ?></a></li>
+							</ul>
+						</div><!--headlines-info-->
+					</div><!--blog-text-noimg-->
+					<?php } ?>
+				</li>
+			<?php endwhile; endif; ?>
+			</ul>
+			<div class="nav-links">
+				<?php if (function_exists("pagination")) { pagination($wp_query->max_num_pages); } ?>
+			</div><!--nav-links-->
+
+
+		<?php
+
+		/* After widget (defined by themes). */
+		echo $after_widget;
+	}
+
+	/**
+	 * Update the widget settings.
+	 */
+	function update( $new_instance, $old_instance ) {
+		$instance = $old_instance;
+
+		/* Strip tags for title and name to remove HTML (important for text inputs). */
+		$instance['title'] = strip_tags( $new_instance['title'] );
+
+		return $instance;
+	}
+
+
+	function form( $instance ) {
+
+		/* Set up some default widget settings. */
+		$defaults = array( 'title' => __('Latest News'));
+		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
+
+		<!-- Widget Title: Text Input -->
+		<p>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Title:</label>
+			<input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" style="width:90%;" />
+		</p>
+
+
+	<?php
+	}
+}
+
+?>
