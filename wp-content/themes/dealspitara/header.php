@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
+
+<head>
+
+<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+
+
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<meta property="og:type" content="article" />
+
+<meta property="og:image" content="<?php if (function_exists('wp_get_attachment_thumb_url')) {echo wp_get_attachment_thumb_url(get_post_thumbnail_id($post->ID)); }?>" />
+
+
+
+
+
+<title>
+
+<?php
+
+wp_title(''); 
+
+/*
+	if (function_exists('is_tag') && is_tag()) {
+
+	single_tag_title("Tag Archive for &quot;"); echo '&quot; - '; }
+
+	elseif (is_archive()) { wp_title(''); echo ' - '; }
+
+	elseif (is_search()) { echo 'Search results for &quot;'.esc_html($s).'&quot; - '; }
+
+	elseif (!(is_404()) && (is_single()) || (is_page())) { wp_title(''); echo ' - '; }
+
+	elseif (is_404()) { echo 'Not Found - '; }
+
+	if (is_home()) { bloginfo('name'); echo ' - '; bloginfo('description'); }
+
+	else { bloginfo('name'); }
+
+	if ($paged>1) { echo ' - page '. $paged; }
+*/
+?>
+
+</title>
+
+
+
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+
+<!--[if IE]>
+
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/iecss.css" />
+
+<![endif]-->
+
+<?php if(get_option('mm_favicon')) { ?><link rel="shortcut icon" href="<?php echo get_option('mm_favicon'); ?>" /><?php } ?>
+
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
+
+<link rel="alternate" type="text/xml" title="RSS .92" href="<?php bloginfo('rss_url'); ?>" />
+
+<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo('atom_url'); ?>" />
+
+<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+
+<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
+
+
+
+<style type="text/css">
+
+<?php $customcss = get_option('mm_customcss'); if ($customcss) { echo stripslashes($customcss); } ?>
+
+</style>
+
+
+
+<?php wp_head(); ?>
+
+
+
+</head>
+
+
+
+<body <?php body_class(); ?>>
+
+
+
+<div id="site">
+
+	<?php if(get_option('mm_leader_ad')) { ?>
+
+	<div id="leader-wrapper">	
+
+		<div id="leaderboard">	
+
+<div id="logo">
+
+			<?php if(get_option('mm_logo')) { ?>
+
+			<a href="<?php echo home_url(); ?>"><img src="<?php echo get_option('mm_logo'); ?>" alt="<?php bloginfo( 'name' ); ?>" /></a>
+
+			<?php } else { ?>
+
+				<a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo( 'name' ); ?>" /></a>
+
+			<?php } ?>
+
+		</div><!--logo-->
+			<div id="leader-left">
+
+				<?php echo get_option('mm_leader_ad'); ?>
+
+			</div><!--leader-left-->
+
+			<?php if(get_option('mm_mobile_ad')) { ?>
+
+			<div id="ad-320">
+
+				<?php echo get_option('mm_mobile_ad'); ?>
+
+			</div><!--ad-320-->
+
+			<?php } ?>
+
+		</div><!--leaderboard-->
+
+	</div><!--leader-wrapper-->
+
+	<?php } ?>
+
+
+
+	<div id="nav">
+
+		<div id="main-nav-wrapper">
+
+			<div id="main-nav">
+
+				<?php wp_nav_menu(array('theme_location' => 'main-menu')); ?>
+
+			</div><!--main-nav-->
+
+			<div id="nav-mobi">
+
+				<?php wp_nav_menu(array( 'theme_location' => 'main-menu', 'items_wrap' => '<select><option value="#">Menu</option>%3$s</select>', 'walker' => new select_menu_walker() )); ?>
+
+			</div><!--nav-mobi-->
+
+		</div><!--main-nav-wrapper-->
+
+	</div><!--nav-->
+
+	<div id="wrapper">
+
+		<?php if(get_option('mm_wall_ad')) { ?>
+
+		<div id="wallpaper">
+
+			<?php if(get_option('mm_wall_url')) { ?>
+
+			<a href="<?php echo get_option('mm_wall_url'); ?>" class="wallpaper-link"></a>
+
+			<?php } ?>
+
+		</div><!--wallpaper-->
+
+		<?php } ?>
+
+		<div id="inner-wrapper">
+
+			<div id="content">
+				<!-- <div id="vertical-ad-right">
+
+				</div> -->
+				<div id="main-header-wrapper">
+
+					<div id="header">
+
+<!-- <div id="slimLeaderBoardAd" align="left" style="float: left; max-width: 660px;">
+<script id="mNCC" language="javascript">  medianet_width='728';  medianet_height= '20';  medianet_crid='862500020';  </script>  <script id="mNSC" src="http://contextual.media.net/nmedianet.js?cid=8CUW89A79" language="javascript"></script> 
+</div> -->					
+
+						<div id="header-info">
+
+							<div id="small-nav">
+
+								<?php wp_nav_menu(array('theme_location' => 'secondary-menu')); ?>
+
+							</div><!--small-nav-->
+
+						</div><!--header-info-->
+
+					</div><!--header-->
+
+				</div><!--main-header-wrapper-->
+
+				<div id="content-top">
+
+					<div id="ticker">
+
+						<span class="ticker-heading"><?php _e( "Don't Miss", 'mvp-text' ); ?></span>
+
+						<ul class="ticker-list">
+
+							<?php $recent = new WP_Query(array( 'tag' => get_option('mm_ticker_tags'), 'showposts' => get_option('mm_ticker_num') )); while($recent->have_posts()) : $recent->the_post();?>
+
+							<li><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></li>
+
+							<?php endwhile; ?>
+
+						</ul>
+
+						
+
+					</div><!--ticker-->
+
+					<div id="content-social">
+
+						<ul>
+
+							<?php if(get_option('mm_facebook')) { ?>
+
+							<li><a href="http://www.facebook.com/<?php echo get_option('mm_facebook'); ?>" alt="Facebook" class="fb-but" target="_blank"></a></li><?php } ?>
+
+							<?php if(get_option('mm_twitter')) { ?><li><a href="http://www.twitter.com/<?php echo get_option('mm_twitter'); ?>" alt="Twitter" class="twitter-but" target="_blank"></a></li><?php } ?>
+
+							<?php if(get_option('mm_pinterest')) { ?><li><a href="http://www.pinterest.com/<?php echo get_option('mm_pinterest'); ?>" alt="Pinterest" class="pinterest-but" target="_blank"></a></li><?php } ?>
+
+							<?php if(get_option('mm_google')) { ?><li><a href="<?php echo get_option('mm_google'); ?>" alt="Google Plus" class="google-but" target="_blank"></a></li><?php } ?>
+
+							<?php if(get_option('mm_youtube')) { ?><li><a href="http://www.youtube.com/user/<?php echo get_option('mm_youtube'); ?>" alt="YouTube" class="youtube-but" target="_blank"></a></li><?php } ?>
+
+							<?php if(get_option('mm_linkedin')) { ?><li><a href="http://www.linkedin.com/company/<?php echo get_option('mm_linkedin'); ?>" alt="Linkedin" class="linkedin-but" target="_blank"></a></li><?php } ?>
+
+							<li><a href="<?php bloginfo('rss_url'); ?>" alt="RSS Feed" class="rss-but"></a></li>
+
+							<li>
+
+								<div class="search-wrapper">
+
+									<div class="search-box">
+
+										<?php get_search_form(); ?>
+
+									</div><!--search-box-->
+
+								</div><!--search wrapper-->
+
+							</li>
+
+						</ul>
+
+					</div><!--content-social-->
+
+
+
+				</div><!--content-top-->
